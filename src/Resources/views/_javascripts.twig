@@ -1,0 +1,25 @@
+<script src="{{ asset('bundles/bootstrap4/plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('bundles/bootstrap4/js/bootstrap.js') }}"></script>
+
+<script type="text/javascript">
+    $(function(){
+        
+        $('body').on('show.bs.modal', '.modal', function(event) {
+            $(this).find(".modal-content").load(event.relatedTarget.href);
+        });
+        
+        $('body').on('hidden.bs.modal', '.modal', function(event) { 
+            $(this).find(".modal-content").html('<div style="text-align: center"><img src="{{ asset('bundles/greenadmin/img/loading.gif') }}" style="width: 20px"/></div>');
+        });
+    });
+
+    $(function () {
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            localStorage.setItem('lastTab', $(this).attr('href'));
+        });
+        var lastTab = localStorage.getItem('lastTab');
+        if (lastTab) {
+            $('[href="' + lastTab + '"]').tab('show');
+        }
+    }); 
+</script>
