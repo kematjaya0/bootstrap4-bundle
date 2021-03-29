@@ -1,0 +1,25 @@
+{
+    "name": "kematjaya/bootstrap4-bundle",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nur Hidayatullah",
+            "email": "kematjaya0@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/http-kernel": "^5.2",
+        "symfony/dependency-injection": "^5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kematjaya\\Bootstrap4Bundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kematjaya\\Bootstrap4Bundle\\Tests\\": "tests/"
+        }
+    }
+}
